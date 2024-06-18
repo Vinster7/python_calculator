@@ -19,6 +19,9 @@ def power(x,y):
 def squareroot(x):
     return math.sqrt(x)
 
+def percentage(x,y):
+    return ((x*y)/100)
+
 
 
 print("Select operation:")
@@ -28,14 +31,15 @@ print("3. Multiply")
 print("4. Divide")
 print("5. Power")
 print("6. Squareroot")
+print("7. Percentage")
 
 while True:
-    choice = input("Enter choice (1/2/3/4): ")
+    choice = input("Enter choice (1/2/3/4/5/6/7): ")
 
-    if choice in ['1', '2', '3', '4']:
+    if choice in ['1', '2', '3', '4','5','6','7']:
         try:
            num1 = float(input("Enter first number: "))
-           if choice in ['1', '2', '3', '4']:
+           if choice in ['1', '2', '3', '4', '5', '7']:
                 num2 = float(input("Enter second number: "))
         except ValueError:
             print("Invalid input. Please enter numeric values.")
@@ -54,6 +58,8 @@ while True:
             print(power(num1, num2))
         elif choice == '6':
             print(squareroot(num1))
+        elif choice == '7':
+            print(percentage(num1,num2))
     else:
         print("Invalid input")
     n = input("Do you want to perform another calculation? (yes/no): ")
